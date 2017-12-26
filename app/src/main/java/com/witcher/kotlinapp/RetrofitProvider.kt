@@ -24,7 +24,7 @@ class RetrofitProvider private constructor() {
                 connectTimeout(13, TimeUnit.SECONDS).
                 retryOnConnectionFailure(true).
                 addInterceptor(HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY))!!
-        var retrofit = Retrofit.Builder().baseUrl("baseUrl")
+        var retrofit = Retrofit.Builder().baseUrl("http://gank.io")
                 .client(builder.build())
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
